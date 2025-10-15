@@ -6,13 +6,13 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Copy package files
-COPY "linkedin app/package.json" ./
+COPY ["linkedin app/package.json", "./"]
 
 # Install dependencies
 RUN npm install
 
 # Copy application source code
-COPY "linkedin app/" ./
+COPY ["linkedin app/", "./"]
 
 # Build the application
 RUN npm run build
